@@ -96,7 +96,7 @@ jobs:
         id: start-awx
         uses: irunasroot/action-awx-template@releases/v1
         with:
-          controller_url: ${{ github.event.inputs.controller_url || secrets.CONTROLLER_URL }}
+          controller_url: ${{ github.event.inputs.controller_url || vars.CONTROLLER_URL }}
           controller_username: ${{ github.event.inputs.controller_username || secrets.CONTROLLER_USERNAME }}
           controller_password: ${{ github.event.inputs.controller_password || secrets.CONTROLLER_PASSWORD }}
           controller_token: ${{ github.event.inputs.controller_token || secrets.CONTROLLER_TOKEN }}
