@@ -8,41 +8,37 @@ on:
         type: string
       controller_username:
         description:
-          'The username to log into the controller. One of username/password or
-          token needs to be provided.'
+          'The username to log into the controller. One of username/password or token needs to be provided.'
         type: string
         required: false
       controller_password:
         description:
-          'The password to log into the controller. One of username/password or
-          token needs to be provided.'
+          'The password to log into the controller. One of username/password or token needs to be provided.'
         type: string
         required: false
       controller_token:
         description:
-          'The token to authenticate to the controller. One of username/password or
-          token needs to be provided.'
+          'The token to authenticate to the controller. One of username/password or token needs to be provided.'
         type: string
         required: false
       controller_timeout:
         description:
-          'The timeout in milliseconds to wait for a call to the controller before
-          erroring out.'
+          'The timeout in milliseconds to wait for a call to the controller before erroring out.'
         required: false
         type: number
         default: 1000
       controller_verify_certificate:
         description:
-          "Verify if the controller's certificate is valid. Type string[boolean]"
+          "Verify if the controller's certificate is valid."
         required: false
         type: boolean
         default: true
       job_template_id:
         description:
-          'The job template id. This is mutually exclusive with
-          workflow_job_template_id.'
+          'The job template id.'
         type: number
         required: false
+        default: 7
       extra_vars:
         description:
           'Pass extra command line variables to the playbook.'
@@ -50,14 +46,12 @@ on:
         required: false
       limit:
         description:
-          'Provide a host pattern to further constrain the list of hosts that will
-          be managed or affected by the playbook.'
+          'Provide a host pattern to further constrain the list of hosts that will be managed or affected by the playbook.'
         type: string
         required: false
       verbosity:
         description:
-          'Control the level of output ansible will produce as the playbook
-          executes. Can only be one of 0-5.'
+          'Control the level of output ansible will produce as the playbook executes. Can only be one of 0-5.'
         type: choice
         options:
           - 0
@@ -100,6 +94,7 @@ jobs:
           controller_username: ${{ github.event.inputs.controller_username || secrets.CONTROLLER_USERNAME }}
           controller_password: ${{ github.event.inputs.controller_password || secrets.CONTROLLER_PASSWORD }}
           controller_token: ${{ github.event.inputs.controller_token || secrets.CONTROLLER_TOKEN }}
+          controller_timeout: ${{ github.event.inputs.controller_timeout }}
           controller_verify_certificate: ${{ github.event.inputs.controller_verify_certificate }}
           job_template_id: ${{ github.event.inputs.job_template_id }}
           extra_vars: ${{ github.event.inputs.extra_vars }}
