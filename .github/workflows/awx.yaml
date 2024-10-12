@@ -70,8 +70,7 @@ jobs:
     name: Test a simple Job Template
     runs-on: ubuntu-latest
     env:
-      ACTIONS_STEP_DEBUG: true
-      ACTIONS_RUNNER_DEBUG: true
+      CONTROLLER_DEBUG: ${{ vars.ACTIONS_STEP_DEBUG }}
     steps:
       - name: Checkout
         id: checkout
