@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: Job Template
 
 on:
   workflow_dispatch:
@@ -44,26 +44,9 @@ on:
           workflow_job_template_id.'
         type: number
         required: false
-      workflow_job_template_id:
-        description:
-          'The workflow job template id. This is mutually exclusive with
-          job_template_id'
-        type: number
-        required: false
       extra_vars:
         description:
           'Pass extra command line variables to the playbook.'
-        type: string
-        required: false
-      inventory:
-        description:
-          'Select the inventory containing the hosts you want this job to manage.'
-        type: string
-        required: false
-      scm_branch:
-        description:
-          'Branch to checkout. In addition to branches, you can input tags, commit
-          hashes, and arbitrary refs.'
         type: string
         required: false
       limit:
@@ -72,29 +55,6 @@ on:
           be managed or affected by the playbook.'
         type: string
         required: false
-      job_tags:
-        description:
-          'Tags are useful when you have a large playbook, and you want to run a
-          specific part of a play or task. Use commas to separate multiple tags.'
-        type: string
-        required: false
-      skip_tags:
-        description:
-          'Skip tags are useful when you have a large playbook, and you want to skip
-          specific parts of a play or task. Use commas to separate multiple tags.'
-        type: string
-        required: false
-      job_type:
-        description:
-          "For job templates, select run to execute the playbook. Select check to
-          only check playbook syntax, test environment setup, and report problems
-          without executing the playbook. Can only be one of 'run', or 'check'"
-        required: false
-        type: choice
-        options:
-          - "run"
-          - "check"
-        default: 'run'
       verbosity:
         description:
           'Control the level of output ansible will produce as the playbook
@@ -107,56 +67,6 @@ on:
           - 3
           - 4
           - 5
-        required: false
-      diff_mode:
-        description:
-          'If enabled, show the changes made by Ansible tasks, where supported.'
-        type: boolean
-        required: false
-      credentials:
-        description:
-          "Select credentials for accessing the nodes this job will be ran against.
-          Specify as a list of ID's seperated by commas."
-        type: string
-        required: false
-      credential_passwords:
-        description: 'Credentials Passwords.'
-        type: string
-        required: false
-      execution_environment:
-        description:
-          'The container image to be used for execution. Specify as the ID of the EE.'
-        type: number
-        required: false
-      labels:
-        description:
-          "Optional labels that describe this job template, such as 'dev' or 'test'.
-          Specify as a list of ID's seperated by commas."
-        type: string
-        required: false
-      forks:
-        description:
-          'The number of parallel or simultaneous processes to use while executing
-          the playbook.'
-        type: number
-        required: false
-      job_slice_count:
-        description:
-          'Divide the work done by this job template into the specified number of
-          job slices, each running the same tasks against a portion of the
-          inventory.'
-        type: number
-        required: false
-      timeout:
-        description:
-          'The amount of time (in seconds) to run before the job is canceled.'
-        type: number
-        required: false
-      instance_groups:
-        description:
-          "Select the Instance Groups for this Job Template to run on. Specify as a
-          list of ID's seperated by commas."
-        type: string
         required: false
 
 permissions:
@@ -184,4 +94,12 @@ jobs:
         id: start-awx
         uses: irunasroot/action-awx-template@releases/v1
         with:
-          controller_url: 
+          controller_url: ${{ github.event.inputs.controller_url || secrets.CONTROLLER_URL }}
+          controller_username: ${{ github.event.inputs.controller_username || secrets.CONTROLLER_USERNAME }}
+          controller_password: ${{ github.event.inputs.controller_password || secrets.CONTROLLER_PASSWORD }}
+          controller_token: ${{ github.event.inputs.controller_token || secrets.CONTROLLER_TOKEN }}
+          controller_verify_certificate: ${{ github.event.inputs.controller_verify_certificate }}
+          job_template_id: ${{ github.event.inputs.job_template_id }}
+          extra_vars: ${{ github.event.inputs.extra_vars }}
+          limit: ${{ github.event.inputs.limit }}
+          verbosity: ${{ github.event.inputs.verbosity }}
