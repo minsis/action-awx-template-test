@@ -85,8 +85,6 @@ jobs:
       
       - name: Start AWX
         id: start-awx
-        env:
-          CONTROLLER_DEBUG: ${{ vars.ACTIONS_STEP_DEBUG }}
         uses: irunasroot/action-awx-template@releases/v1
         with:
           controller_url: ${{ github.event.inputs.controller_url || vars.CONTROLLER_URL }}
