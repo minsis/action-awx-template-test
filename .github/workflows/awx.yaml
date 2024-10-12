@@ -6,7 +6,6 @@ on:
       controller_url:
         description: 'The URL of AWX/AAP.'
         type: string
-        required: true
       controller_username:
         description:
           'The username to log into the controller. One of username/password or
@@ -76,6 +75,9 @@ jobs:
   test-awx-jt-simple:
     name: Test a simple Job Template
     runs-on: ubuntu-latest
+    env:
+      ACTIONS_STEP_DEBUG: true
+      ACTIONS_RUNNER_DEBUG: true
     steps:
       - name: Checkout
         id: checkout
