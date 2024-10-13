@@ -1,0 +1,73 @@
+name: Workflow Job Template - Complex Exeuction
+
+on:
+  workflow_dispatch:
+    inputs:
+      controller_url:
+        description: 'The URL of AWX/AAP.'
+        type: string
+      controller_username:
+        description:
+          'The username to log into the controller. One of username/password or token needs to be provided.'
+        type: string
+        required: false
+      controller_password:
+        description:
+          'The password to log into the controller. One of username/password or token needs to be provided.'
+        type: string
+        required: false
+      controller_token:
+        description:
+          'The token to authenticate to the controller. One of username/password or token needs to be provided.'
+        type: string
+        required: false
+      controller_timeout:
+        description:
+          'The timeout in milliseconds to wait for a call to the controller before erroring out.'
+        required: false
+        type: number
+        default: 1000
+      controller_verify_certificate:
+        description:
+          "Verify if the controller's certificate is valid."
+        required: false
+        type: boolean
+        default: true
+      workflow_job_template_id:
+        description:
+          'The job template id.'
+        type: number
+        required: false
+        default: 7
+      extra_vars:
+        description:
+          'Pass extra command line variables to the playbook.'
+        type: string
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  test-awx-jt-simple:
+    name: Test a simple Job Template
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Start AWX
+        id: start-awx
+        uses: irunasroot/action-awx-template@releases/v1
+        with:
+          controller_url: ${{ github.event.inputs.controller_url || vars.CONTROLLER_URL }}
+          controller_username: ${{ github.event.inputs.controller_username || secrets.CONTROLLER_USERNAME }}
+          controller_password: ${{ github.event.inputs.controller_password || secrets.CONTROLLER_PASSWORD }}
+          controller_token: ${{ github.event.inputs.controller_token || secrets.CONTROLLER_TOKEN }}
+          controller_timeout: ${{ github.event.inputs.controller_timeout }}
+          controller_verify_certificate: ${{ github.event.inputs.controller_verify_certificate }}
+          workflow_job_template_id: ${{ github.event.inputs.workflow_job_template_id }}
+          extra_vars: ${{ github.event.inputs.extra_vars }}

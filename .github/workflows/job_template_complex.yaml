@@ -1,4 +1,4 @@
-name: Job Template
+name: Job Template - Complex Exeuction
 
 on:
   workflow_dispatch:
@@ -44,23 +44,6 @@ on:
           'Pass extra command line variables to the playbook.'
         type: string
         required: false
-      limit:
-        description:
-          'Provide a host pattern to further constrain the list of hosts that will be managed or affected by the playbook.'
-        type: string
-        required: false
-      verbosity:
-        description:
-          'Control the level of output ansible will produce as the playbook executes. Can only be one of 0-5.'
-        type: choice
-        options:
-          - 0
-          - 1
-          - 2
-          - 3
-          - 4
-          - 5
-        required: false
 
 permissions:
   contents: read
@@ -75,13 +58,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-
-      # - name: Setup Node.js
-      #   id: setup-node
-      #   uses: actions/setup-node@v4
-      #   with:
-      #     node-version-file: .node-version
-      #     cache: npm
       
       - name: Start AWX
         id: start-awx
@@ -95,5 +71,3 @@ jobs:
           controller_verify_certificate: ${{ github.event.inputs.controller_verify_certificate }}
           job_template_id: ${{ github.event.inputs.job_template_id }}
           extra_vars: ${{ github.event.inputs.extra_vars }}
-          limit: ${{ github.event.inputs.limit }}
-          verbosity: ${{ github.event.inputs.verbosity }}
