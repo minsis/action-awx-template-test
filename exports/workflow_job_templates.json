@@ -1,0 +1,438 @@
+{
+     "workflow_job_templates": [
+          {
+               "name": "Demo Workflow Job Template - Complex",
+               "description": "",
+               "extra_vars": "---",
+               "survey_enabled": false,
+               "allow_simultaneous": false,
+               "ask_variables_on_launch": true,
+               "limit": null,
+               "scm_branch": null,
+               "ask_inventory_on_launch": false,
+               "ask_scm_branch_on_launch": false,
+               "ask_limit_on_launch": false,
+               "webhook_service": "",
+               "webhook_credential": null,
+               "ask_labels_on_launch": false,
+               "ask_skip_tags_on_launch": false,
+               "ask_tags_on_launch": false,
+               "skip_tags": null,
+               "job_tags": null,
+               "organization": {
+                    "name": "Default",
+                    "type": "organization"
+               },
+               "inventory": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Demo Inventory",
+                    "type": "inventory"
+               },
+               "related": {
+                    "schedules": [],
+                    "workflow_nodes": [
+                         {
+                              "extra_data": {},
+                              "inventory": null,
+                              "scm_branch": null,
+                              "job_type": null,
+                              "job_tags": null,
+                              "skip_tags": null,
+                              "limit": null,
+                              "diff_mode": null,
+                              "verbosity": null,
+                              "execution_environment": null,
+                              "forks": null,
+                              "job_slice_count": null,
+                              "timeout": null,
+                              "all_parents_must_converge": false,
+                              "identifier": "0c92362b-3920-46e8-b7b4-d0910e615007",
+                              "workflow_job_template": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Demo Workflow Job Template - Complex",
+                                   "type": "workflow_job_template"
+                              },
+                              "unified_job_template": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Demo Job Template",
+                                   "type": "job_template"
+                              },
+                              "related": {
+                                   "credentials": [],
+                                   "success_nodes": [],
+                                   "failure_nodes": [],
+                                   "always_nodes": []
+                              },
+                              "natural_key": {
+                                   "workflow_job_template": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "Demo Workflow Job Template - Complex",
+                                        "type": "workflow_job_template"
+                                   },
+                                   "identifier": "0c92362b-3920-46e8-b7b4-d0910e615007",
+                                   "type": "workflow_job_template_node"
+                              }
+                         },
+                         {
+                              "extra_data": {},
+                              "inventory": null,
+                              "scm_branch": null,
+                              "job_type": null,
+                              "job_tags": null,
+                              "skip_tags": null,
+                              "limit": null,
+                              "diff_mode": null,
+                              "verbosity": null,
+                              "execution_environment": null,
+                              "forks": null,
+                              "job_slice_count": null,
+                              "timeout": null,
+                              "all_parents_must_converge": false,
+                              "identifier": "3810f4aa-408f-41c1-ab78-0a86684c7334",
+                              "workflow_job_template": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Demo Workflow Job Template - Complex",
+                                   "type": "workflow_job_template"
+                              },
+                              "unified_job_template": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Demo Job Template",
+                                   "type": "job_template"
+                              },
+                              "related": {
+                                   "credentials": [],
+                                   "success_nodes": [],
+                                   "failure_nodes": [],
+                                   "always_nodes": []
+                              },
+                              "natural_key": {
+                                   "workflow_job_template": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "Demo Workflow Job Template - Complex",
+                                        "type": "workflow_job_template"
+                                   },
+                                   "identifier": "3810f4aa-408f-41c1-ab78-0a86684c7334",
+                                   "type": "workflow_job_template_node"
+                              }
+                         },
+                         {
+                              "extra_data": {},
+                              "inventory": null,
+                              "scm_branch": null,
+                              "job_type": null,
+                              "job_tags": null,
+                              "skip_tags": null,
+                              "limit": null,
+                              "diff_mode": null,
+                              "verbosity": null,
+                              "execution_environment": null,
+                              "forks": null,
+                              "job_slice_count": null,
+                              "timeout": null,
+                              "all_parents_must_converge": false,
+                              "identifier": "03e2963e-3a6a-4807-ae85-ac4027d517ed",
+                              "workflow_job_template": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Demo Workflow Job Template - Complex",
+                                   "type": "workflow_job_template"
+                              },
+                              "unified_job_template": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Demo Job Template",
+                                   "type": "job_template"
+                              },
+                              "related": {
+                                   "credentials": [],
+                                   "success_nodes": [
+                                        {
+                                             "workflow_job_template": {
+                                                  "organization": {
+                                                       "name": "Default",
+                                                       "type": "organization"
+                                                  },
+                                                  "name": "Demo Workflow Job Template - Complex",
+                                                  "type": "workflow_job_template"
+                                             },
+                                             "identifier": "0c92362b-3920-46e8-b7b4-d0910e615007",
+                                             "type": "workflow_job_template_node"
+                                        }
+                                   ],
+                                   "failure_nodes": [],
+                                   "always_nodes": []
+                              },
+                              "natural_key": {
+                                   "workflow_job_template": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "Demo Workflow Job Template - Complex",
+                                        "type": "workflow_job_template"
+                                   },
+                                   "identifier": "03e2963e-3a6a-4807-ae85-ac4027d517ed",
+                                   "type": "workflow_job_template_node"
+                              }
+                         }
+                    ],
+                    "labels": [],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": [],
+                    "notification_templates_approvals": [],
+                    "survey_spec": {}
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Demo Workflow Job Template - Complex",
+                    "type": "workflow_job_template"
+               }
+          },
+          {
+               "name": "Demo Workflow Job Template - Simple",
+               "description": "",
+               "extra_vars": "---",
+               "survey_enabled": false,
+               "allow_simultaneous": false,
+               "ask_variables_on_launch": false,
+               "limit": null,
+               "scm_branch": null,
+               "ask_inventory_on_launch": false,
+               "ask_scm_branch_on_launch": false,
+               "ask_limit_on_launch": false,
+               "webhook_service": "",
+               "webhook_credential": null,
+               "ask_labels_on_launch": false,
+               "ask_skip_tags_on_launch": false,
+               "ask_tags_on_launch": false,
+               "skip_tags": null,
+               "job_tags": null,
+               "organization": {
+                    "name": "Default",
+                    "type": "organization"
+               },
+               "inventory": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Demo Inventory",
+                    "type": "inventory"
+               },
+               "related": {
+                    "schedules": [],
+                    "workflow_nodes": [
+                         {
+                              "extra_data": {},
+                              "inventory": null,
+                              "scm_branch": null,
+                              "job_type": null,
+                              "job_tags": null,
+                              "skip_tags": null,
+                              "limit": null,
+                              "diff_mode": null,
+                              "verbosity": null,
+                              "execution_environment": null,
+                              "forks": null,
+                              "job_slice_count": null,
+                              "timeout": null,
+                              "all_parents_must_converge": false,
+                              "identifier": "0c92362b-3920-46e8-b7b4-d0910e615007",
+                              "workflow_job_template": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Demo Workflow Job Template - Simple",
+                                   "type": "workflow_job_template"
+                              },
+                              "unified_job_template": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Demo Job Template",
+                                   "type": "job_template"
+                              },
+                              "related": {
+                                   "credentials": [],
+                                   "success_nodes": [],
+                                   "failure_nodes": [],
+                                   "always_nodes": []
+                              },
+                              "natural_key": {
+                                   "workflow_job_template": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "Demo Workflow Job Template - Simple",
+                                        "type": "workflow_job_template"
+                                   },
+                                   "identifier": "0c92362b-3920-46e8-b7b4-d0910e615007",
+                                   "type": "workflow_job_template_node"
+                              }
+                         },
+                         {
+                              "extra_data": {},
+                              "inventory": null,
+                              "scm_branch": null,
+                              "job_type": null,
+                              "job_tags": null,
+                              "skip_tags": null,
+                              "limit": null,
+                              "diff_mode": null,
+                              "verbosity": null,
+                              "execution_environment": null,
+                              "forks": null,
+                              "job_slice_count": null,
+                              "timeout": null,
+                              "all_parents_must_converge": false,
+                              "identifier": "3810f4aa-408f-41c1-ab78-0a86684c7334",
+                              "workflow_job_template": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Demo Workflow Job Template - Simple",
+                                   "type": "workflow_job_template"
+                              },
+                              "unified_job_template": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Demo Job Template",
+                                   "type": "job_template"
+                              },
+                              "related": {
+                                   "credentials": [],
+                                   "success_nodes": [],
+                                   "failure_nodes": [],
+                                   "always_nodes": []
+                              },
+                              "natural_key": {
+                                   "workflow_job_template": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "Demo Workflow Job Template - Simple",
+                                        "type": "workflow_job_template"
+                                   },
+                                   "identifier": "3810f4aa-408f-41c1-ab78-0a86684c7334",
+                                   "type": "workflow_job_template_node"
+                              }
+                         },
+                         {
+                              "extra_data": {},
+                              "inventory": null,
+                              "scm_branch": null,
+                              "job_type": null,
+                              "job_tags": null,
+                              "skip_tags": null,
+                              "limit": null,
+                              "diff_mode": null,
+                              "verbosity": null,
+                              "execution_environment": null,
+                              "forks": null,
+                              "job_slice_count": null,
+                              "timeout": null,
+                              "all_parents_must_converge": false,
+                              "identifier": "03e2963e-3a6a-4807-ae85-ac4027d517ed",
+                              "workflow_job_template": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Demo Workflow Job Template - Simple",
+                                   "type": "workflow_job_template"
+                              },
+                              "unified_job_template": {
+                                   "organization": {
+                                        "name": "Default",
+                                        "type": "organization"
+                                   },
+                                   "name": "Demo Job Template",
+                                   "type": "job_template"
+                              },
+                              "related": {
+                                   "credentials": [],
+                                   "success_nodes": [
+                                        {
+                                             "workflow_job_template": {
+                                                  "organization": {
+                                                       "name": "Default",
+                                                       "type": "organization"
+                                                  },
+                                                  "name": "Demo Workflow Job Template - Simple",
+                                                  "type": "workflow_job_template"
+                                             },
+                                             "identifier": "0c92362b-3920-46e8-b7b4-d0910e615007",
+                                             "type": "workflow_job_template_node"
+                                        }
+                                   ],
+                                   "failure_nodes": [],
+                                   "always_nodes": []
+                              },
+                              "natural_key": {
+                                   "workflow_job_template": {
+                                        "organization": {
+                                             "name": "Default",
+                                             "type": "organization"
+                                        },
+                                        "name": "Demo Workflow Job Template - Simple",
+                                        "type": "workflow_job_template"
+                                   },
+                                   "identifier": "03e2963e-3a6a-4807-ae85-ac4027d517ed",
+                                   "type": "workflow_job_template_node"
+                              }
+                         }
+                    ],
+                    "labels": [],
+                    "notification_templates_started": [],
+                    "notification_templates_success": [],
+                    "notification_templates_error": [],
+                    "notification_templates_approvals": [],
+                    "survey_spec": {}
+               },
+               "natural_key": {
+                    "organization": {
+                         "name": "Default",
+                         "type": "organization"
+                    },
+                    "name": "Demo Workflow Job Template - Simple",
+                    "type": "workflow_job_template"
+               }
+          }
+     ]
+}

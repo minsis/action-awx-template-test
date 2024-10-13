@@ -38,7 +38,6 @@ on:
           'The workflow job template id.'
         type: number
         required: false
-        
       extra_vars:
         description:
           'Pass extra command line variables to the playbook.'
