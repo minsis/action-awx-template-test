@@ -26,7 +26,7 @@ on:
           'The timeout in milliseconds to wait for a call to the controller before erroring out.'
         required: false
         type: number
-        default: 1000
+        default: 5000
       controller_verify_certificate:
         description:
           "Verify if the controller's certificate is valid."
@@ -38,7 +38,6 @@ on:
           'The job template id.'
         type: number
         required: false
-        default: 7
       extra_vars:
         description:
           'Pass extra command line variables to the playbook.'
@@ -50,7 +49,7 @@ permissions:
 
 jobs:
   test-awx-jt-simple:
-    name: Test a simple Job Template
+    name: Test a complex Job Template
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

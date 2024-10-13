@@ -26,6 +26,7 @@ on:
           'The timeout in milliseconds to wait for a call to the controller before erroring out.'
         required: false
         type: number
+        default: 5000
       controller_verify_certificate:
         description:
           "Verify if the controller's certificate is valid."

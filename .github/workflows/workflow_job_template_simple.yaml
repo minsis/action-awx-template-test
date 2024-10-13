@@ -26,6 +26,7 @@ on:
           'The timeout in milliseconds to wait for a call to the controller before erroring out.'
         required: false
         type: number
+        default: 5000
       controller_verify_certificate:
         description:
           "Verify if the controller's certificate is valid."
@@ -34,7 +35,7 @@ on:
         default: true
       workflow_job_template_id:
         description:
-          'The job template id.'
+          'The workflow job template id.'
         type: number
         required: false
 
@@ -43,7 +44,7 @@ permissions:
 
 jobs:
   test-awx-jt-simple:
-    name: Test a simple Job Template
+    name: Test a simple Workflow Job Template
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
